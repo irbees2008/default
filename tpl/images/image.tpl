@@ -1,25 +1,24 @@
 <div>
-<table>
-<tr>
- <td>Оригинальное наименование файла:</td>
- <td>{orig_name}</td>
-</tr>
-<tr>
- <td>Наименование файла:</td>
- <td>{name}</td>
-</tr>
-<tr>
- <td>Размер файла:</td>
- <td>{width} x {height}</td>
-</tr>
-<tr>
- <td>Объём файла:</td>
- <td>{size}</td>
-</tr>
-<tr>
- <td>Предпросмотр:</td>
- <td>{preview}</td>
-</tr>
-</table>
-
+    <table>
+        <tr>
+            <td>РћСЂРёРіРёРЅР°Р»СЊРЅРѕРµ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ С„Р°Р№Р»Р°:</td>
+            <td>{orig_name}</td>
+        </tr>
+        <tr>
+            <td>РќР°РёРјРµРЅРѕРІР°РЅРёРµ С„Р°Р№Р»Р°:</td>
+            <td>{name}</td>
+        </tr>
+        <tr>
+            <td>Р Р°Р·РјРµСЂ С„Р°Р№Р»Р°:</td>
+            <td>{width} x {height}</td>
+        </tr>
+        <tr>
+            <td>РћР±СЉС‘Рј С„Р°Р№Р»Р°:</td>
+            <td>{size}</td>
+        </tr>
+        <tr>
+            <td>РџСЂРµРґРїСЂРѕСЃРјРѕС‚СЂ:</td>
+            <td>{preview}</td>
+        </tr>
+    </table>
 </div>
