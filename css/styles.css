@@ -864,3 +864,23 @@ input[type="checkbox"]:checked:before {
   content: "\f046";
   visibility: visible;
 }
+#sidebar-wrapper {}
+#menu-toggle{display: none;}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+#sidebar-wrapper.sidebar-toggle {
+  transition: all 0.3s ease-out;
+  margin-left: -250px;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper.sidebar-toggle {
+    transition: 0s;
+    left: 250px;
+  }
+}
+@media (max-width: 768px) {
+	#menu-toggle{ display: inline-block; }
+  
+}
