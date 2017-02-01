@@ -34,7 +34,7 @@ function setStatus(mode) {
 <!-- breadcrumb -->
 <div class="row breadcrumb">
 	<ol class="breadcrumb-entry">
-		<li><a href="admin.php">{{ lang['home'] }}</a></li>
+		<li><a href="admin.php">{l_home}</a></li>
 		<li class="active"><a href="?mod=images">{l_images_title}</a></li>
 	</ol>
 </div>
@@ -96,26 +96,30 @@ function setStatus(mode) {
 <form action="{php_self}?mod=images" method="post" name="imagedelete" id="delform">
 <input type="hidden" name="subaction" value="" />
 <input type="hidden" name="area" value="{area}" />
-            <div id="entries">
-                <table class="table">
-                    <tr>
-                        <td colspan="3" width="80">{l_header.insert}</td>
-                        [preview]
-						<td>{l_show_preview}</td>
-						[/preview]
-                        <td>{l_name}</td>
-                        <td colspan="2">{l_header.view}</td>
- <!-- <td>{l_action}</td> -->
-                        <td colspan="2">{l_size}</td>
-                        <td>{l_category}</td>
-                        <td>{l_author}</td>
-                        <td>{l_action}</td>
-                        <td><input class="check" type="checkbox" name="master_box" title="{l_select_all}" onclick="javascript:check_uncheck_all(imagedelete)" /></td>
-                    </tr>
+            <div id="entries" class="table-responsive">
+                <table class="table table-hover ">
+                     <thead>
+					    <tr>
+                           <th colspan="3">{l_header.insert}</th>
+                           [preview]
+						   <th>{l_show_preview}</th>
+						   [/preview]
+                            <th>{l_name}</th>
+                            <th colspan="2">{l_header.view}</th>
+ <!-- <th>{l_action}</th> -->
+                            <th>{l_size}</th>
+                            <th>{l_category}</th>
+                            <th>{l_author}</th>
+                            <th colspan="2">{l_action}</th>
+                            <th><input class="check" type="checkbox" name="master_box" title="{l_select_all}" onclick="javascript:check_uncheck_all(imagedelete)" /></th>
+						</tr>
+                    </thead>
+					<tbody>
                         {entries}
                     <tr>
                         <td colspan="12">{pagesss}</td>
                     </tr>
+					</tbody>
                 </table>
                 <div class="row">
                     <div class="col-md-8">
