@@ -19,28 +19,28 @@
 
             <table class="table table-condensed" id="maincontent">
                 <thead>
-                    <tr align="left" class="contHead">
-<td>{{ lang['id'] }}</td>
-<td>{{ lang['title'] }}</td>
-<td>{{ lang['type'] }}</td>
-<td>{{ lang['version'] }}</td>
-<td>&nbsp;</td>
-<td>{{ lang['description'] }}</td>
-<td>{{ lang['author'] }}</td>
-<td>{{ lang['action'] }}</td>
-</tr>
+                    <tr>
+                        <td>{{ lang['id'] }}</td>
+                        <td>{{ lang['title'] }}</td>
+                        <td>{{ lang['type'] }}</td>
+                        <td>{{ lang['version'] }}</td>
+                        <td>&nbsp;</td>
+                        <td>{{ lang['description'] }}</td>
+                        <td>{{ lang['author'] }}</td>
+                        <td>{{ lang['action'] }}</td>
+                    </tr>
                 </thead>
                 <tbody id="entryList">
                     {% for entry in entries %}
                     <tr align="left" class="all {{ entry.style }}" id="plugin_{{ entry.id }}">
-                       <td>{{ entry.id }} {{ entry.new }}</td>
-	<td>{{ entry.url }}</td>
-	<td>{{ entry.type }}</td>
-	<td>{{ entry.version }}</td>
-	<td nowrap>{{ entry.readme }} {{ entry.history }}</td>
-	<td>{{ entry.description }}</td>
-	<td>{{ entry.author_url }}</td>
-	<td nowrap="nowrap">{{ entry.link }} {{ entry.install }}</td>
+                        <td>{{ entry.id }} {{ entry.new }}</td>
+	                    <td>{{ entry.url }}</td>
+	                    <td>{{ entry.type }}</td>
+	                    <td>{{ entry.version }}</td>
+	                    <td nowrap>{{ entry.readme }} {{ entry.history }}</td>
+	                    <td>{{ entry.description }}</td>
+	                    <td>{{ entry.author_url }}</td>
+	                    <td nowrap="nowrap">{{ entry.link }} {{ entry.install }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -52,9 +52,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-
     var newSelection = "";
-
     function tabsSwitch(tabs) {
         $("#maincontent").fadeOut(1);
         $(".nav-pills li").removeClass("active");
@@ -64,14 +62,12 @@ $(document).ready(function(){
         $(".all").not("."+newSelection).hide(1);
         $("#maincontent").fadeIn(1);
     }
-    
-    $(".nav-pills").on('click', 'li:not(.active)', function(){
+        $(".nav-pills").on('click', 'li:not(.active)', function(){
         tabsSwitch($(this));
     });
 });
 </script>
 <script language="javascript" type="text/javascript">
-
 function ngPluginSwitch(plugin, state) {
 	ngShowLoading();
 	$.post('/engine/rpc.php', {
@@ -97,6 +93,4 @@ function ngPluginSwitch(plugin, state) {
 		}
 	}, "text").error(function() { ngHideLoading(); ngNotifyWindow('{{ lang['rpc_httpError'] }}', '{{ lang['notifyWindowError'] }}'); });
 }
-
-
 </script>
