@@ -62,47 +62,44 @@ function categoryModifyRequest(cmd, cid) {
 <!-- breadcrumb -->
 				<div class="row breadcrumb">
 					<ol class="breadcrumb-entry">
-<<<<<<< HEAD
 						<li><a href="admin.php">{{ lang['home'] }}</a</li>
-=======
-						<li><a href="{{ home_url }}/engine/">Главная</a></li>
->>>>>>> refs/remotes/origin/master
 						<li class="active"><a href="?mod=categories">{{ lang['categories_title'] }}</a></li>
 					</ol>
 				</div>
-				<!-- /breadcrumb -->
+<!-- /breadcrumb -->
 <div class="row">
-<div class="col-md-12">	
-<div class="panel panel-default">
-<table class="table">
-<thead>
-<tr align="left" class="contHead">
-<td width="5%">#</td>
-<td>{{ lang['title'] }}</td>
-<td>ID</td>
-<td>{{ lang['alt_name'] }}</td>
-<td>{{ lang['category.header.menushow'] }}</td>
-<td>{{ lang['category.header.template'] }}</td>
-<td>{{ lang['news'] }}</td>
-<td width="160">{{ lang['action'] }}</td>
-</tr>
-</thead>
-<tbody id="admCatList">
+    <div class="col-md-12">	
+        <div class="panel panel-default">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td width="5%">#</td>
+                        <td>{{ lang['title'] }}</td>
+                        <td>ID</td>
+                        <td>{{ lang['alt_name'] }}</td>
+                        <td>{{ lang['category.header.menushow'] }}</td>
+                        <td>{{ lang['category.header.template'] }}</td>
+                        <td>{{ lang['news'] }}</td>
+                        <td width="160">{{ lang['action'] }}</td>
+                    </tr>
+                </thead>
+                <tbody id="admCatList">
 {% include localPath(0)~"entries.tpl" %}
-</tbody>
-<tfoot>
-<tr><td colspan="8" class="contentEdit" align="right">&nbsp; 
+                </tbody>
+                <tfoot>
+                    <tr>
+					    <td colspan="8" >&nbsp; 
 {% if (flags.canModify) %}
-<form method="get" action="">
-<input type="hidden" name="mod" value="categories"/>
-<input type="hidden" name="action" value="add"/>
-
-<button class="btn btn-success" type="submit" >{{ lang['addnew'] }}</button>
-</form>{% endif %}</td></tr>
-</tfoot>
-</table>
-
-</form>
-</div>
-</div>
+                        <form method="get" action="">
+                        <input type="hidden" name="mod" value="categories"/>
+                        <input type="hidden" name="action" value="add"/>
+                            <button class="btn btn-success" type="submit" >{{ lang['addnew'] }}</button>
+                        </form>
+{% endif %}
+                        </td>
+					</tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
 </div>
