@@ -24,11 +24,7 @@ $skins_url = skins_url;
 
 $lang = array_merge (LoadLang('index', 'admin'), LoadLang_Askin());
 
-<<<<<<< HEAD
-////////////// Запись в $_COOKIE сделать
-=======
 ////////////// Р—Р°РїРёСЃСЊ РІ $_COOKIE СЃРґРµР»Р°С‚СЊ
->>>>>>> refs/remotes/origin/master
 LoadPluginLibrary('uprofile', 'lib');
 $skin_UAvatar = ( isset($userROW['avatar']) and !empty($userROW['avatar']) )? userGetAvatar($userROW)[1] : $skins_url . '/assets/img/default-avatar.jpg';
 $skin_UStatus = $UGROUP[$userROW['status']]['langName'][$config['default_lang']];
@@ -43,11 +39,7 @@ if (is_array($userROW)) {
 	$unapp2 = '';
 	
 	$newpm = $mysql->result("SELECT count(pmid) FROM ".prefix."_users_pm WHERE to_id = ".db_squote($userROW['id'])." AND viewed = '0'");
-<<<<<<< HEAD
-	$newpmText = ($newpm != "0") ? $newpm : 'нет новых';
-=======
 	$newpmText = ($newpm != "0") ? $newpm : 'РЅРµС‚ РЅРѕРІС‹С…';
->>>>>>> refs/remotes/origin/master
 	
 	// Calculate number of un-approved news
 	if ($userROW['status'] == 1 || $userROW['status'] == 2) {
@@ -56,19 +48,11 @@ if (is_array($userROW)) {
 		$unapp3 = $mysql->result("SELECT count(id) FROM ".prefix."_news WHERE approve = '-1'");
 		$unapp4 = $mysql->result("SELECT count(id) FROM ".prefix."_static WHERE approve = '0'");
 		if ($unapp1)
-<<<<<<< HEAD
-		$unapproved1 = ' <li> <a href="'.$PHP_SELF.'?mod=news&amp;status=1"> Черновики <span class="label label-primary">'.$unapp3.'</span>  </a></li>  ';
-		if ($unapp2)
-		$unapproved2 = '<span class="label label-primary">'.$unapp1.'</span>';
-	    if ($unapp3)
-		$unapproved3 = '<li> <a href="'.$PHP_SELF.'?mod=news&amp;status=2"> На модерации <span class="label label-primary">'.$unapp2.'</span> </a></li>';
-=======
 		$unapproved1 = ' <li> <a href="'.$PHP_SELF.'?mod=news&amp;status=1"> Р§РµСЂРЅРѕРІРёРєРё <span class="label label-primary">'.$unapp3.'</span>  </a></li>  ';
 		if ($unapp2)
 		$unapproved2 = '<span class="label label-primary">'.$unapp1.'</span>';
 	    if ($unapp3)
 		$unapproved3 = '<li> <a href="'.$PHP_SELF.'?mod=news&amp;status=2"> РќР° РјРѕРґРµСЂР°С†РёРё <span class="label label-primary">'.$unapp2.'</span> </a></li>';
->>>>>>> refs/remotes/origin/master
 		if ($unapp4)
 		$unapproved4 = '<span class="label label-primary">'.$unapp4.'</span>';
 	}
@@ -104,7 +88,7 @@ $skin_header = <<<HTML
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-   <link href="http://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic" rel="stylesheet" type="text/css">		
+<link href="http://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic" rel="stylesheet" type="text/css">		
 <link rel="stylesheet" href="$config[home_url]/lib/jqueryui/core/themes/cupertino/jquery-ui.min.css" type="text/css"/>
 <link rel="stylesheet" href="$config[home_url]/lib/jqueryui/core/themes/cupertino/jquery-ui.theme.min.css" type="text/css"/>
 <link rel="stylesheet" href="$config[home_url]/lib/jqueryui/plugins/jquery-ui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" type="text/css"/>
@@ -115,16 +99,14 @@ $skin_header = <<<HTML
 <script type="text/javascript" src="$config[home_url]/lib/functions.js"></script>
 <script type="text/javascript" src="$config[home_url]/lib/admin.js"></script>
 </head>
-<body>
+       <body>
 
-<!-- Page Loader -->
-	<section id="loader-wrapper"><div id="loader">$lang[loading]</div></section>
-	<!-- Page Loader END -->
+<div id="loading-layer"><img src="$skins_url/images/loading.gif" alt="" /> $lang[loading] ...</div>
 
 <!-- navbar -->
 		<header class="topnav">
 			<div class="topnav-left">
-				<a class="topnav-bars" href="#"><i class="fa fa-2x fa-bars" aria-hidden="true" ></i></a>
+				<a class="topnav-bars" href="#" id="menu-toggle"><i class="fa fa-2x fa-bars" aria-hidden="true" ></i></a>
 				<a class="topnav-logo" href="$config[home_url]" title="$lang[mainpage_t]" target="_blank"><i class="fa fa-lg fa-rocket" aria-hidden="true"></i> <span class="hidden-xs">Next Generation CMS</span></a>
 			</div>
 			<div class="topnav-right">
@@ -145,7 +127,7 @@ $skin_header = <<<HTML
 		
 	<div class="container-fluid">
 			<!-- Sidebar -->
-			<div class="content-sidebar collapse">
+			<div id="sidebar-wrapper" class="sidebar-toggle content-sidebar">
 				<ul class="nav nav-menu">
 					<li class="active"><a href="$config[home_url]"><i class="fa fa-external-link" aria-hidden="true" style="color: #3fe1fe;"></i> $lang[mainpage]</a></li>
 					
@@ -165,13 +147,8 @@ $skin_header = <<<HTML
 							$unapproved3
 							</ul>
 					</li>
-<<<<<<< HEAD
 					<li><a href="$PHP_SELF?mod=static" title="$lang[l_static]"><i class="fa fa-sticky-note-o" aria-hidden="true" style="color: #3fe1fe;"></i> $lang[l_static] $unapproved4</a></li>
 					<li><a href="$PHP_SELF?mod=categories" title="$lang[categories]"><i class="fa fa-sitemap" aria-hidden="true" style="color: #3fe1fe;"></i> $lang[categories]</a></li>
-=======
-					<li><a href="$PHP_SELF?mod=static" title="$lang[l_static]">$lang[l_static] $unapproved4</a></li>
-					<li><a href="$PHP_SELF?mod=categories" title="$lang[categories]">$lang[categories]</a></li>
->>>>>>> refs/remotes/origin/master
 					
 					<li><a href="#"><i class="fa fa-cog" aria-hidden="true" style="color: #3fe1fe;"></i> $lang[other]<span class="caret"></span></a>
 						<ul class="nav nav-level">
@@ -201,7 +178,7 @@ HTML;
 
 
 $skin_footer = <<<HTML
-</div>
+                        </div>
 
 
 <!--<script type="text/javascript" src="$config[home_url]/lib/jqueryui/plugins/jquery-ui-timepicker-addon/dist/i18n/jquery-ui-timepicker-addon-i18n.min.js"></script>-->
