@@ -85,95 +85,94 @@ function filter_attach_DateEdit(id) {
 
 <!-- Hidden SUGGEST div -->
 <div id="suggestWindow" class="suggestWindow">
-<table id="suggestBlock" cellspacing="0" cellpadding="0" width="100%"></table>
-<a href="#" align="right" id="suggestClose">{{ lang.editnews['close'] }}</a>
+    <table id="suggestBlock"></table>
+    <a href="#" align="right" id="suggestClose">{{ lang.editnews['close'] }}</a>
 </div>
 <!-- breadcrumb -->
-				<div class="row breadcrumb">
-					<ol class="breadcrumb-entry">
-<<<<<<< HEAD
-						<li><a href="admin.php">{{ lang['home'] }}</a></li>
-=======
-						<li><a href="{{ home_url }}/engine/">Главная</a></li>
->>>>>>> refs/remotes/origin/master
-						<li class="active"><a href="?mod=news">{{ lang.editnews['news_title'] }}</a></li>
-					</ol>
-				</div>
-				<!-- /breadcrumb -->
+<div class="row breadcrumb">
+	<ol class="breadcrumb-entry">
+		<li><a href="admin.php">{{ lang['home'] }}</a></li>
+		<li class="active"><a href="?mod=news">{{ lang.editnews['news_title'] }}</a></li>
+	</ol>
+</div>
+<!-- /breadcrumb -->
 <div class="row">
-
 <form action="{{ php_self }}?mod=news" method="post" name="options_bar">
-<div class="col-md-4">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div style="margin: 10px 0;">
-    <input type="text" class="form-control" name="sl" placeholder="{{ lang.editnews['header.search'] }}" value="{{ sl }}">
+    <div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div style="margin: 10px 0;">
+                    <input type="text" class="form-control" name="sl" placeholder="{{ lang.editnews['header.search'] }}" value="{{ sl }}">
+	            </div>
+				<div style="margin: 10px 0;">
+					<select class="form-control" name="st">
+						<option value="0" {% if (selected == '0') %}selected="selected"{% endif %}>{{ lang.editnews['header.stitle'] }}</option>
+						<option value="1" {% if (selected == '1') %}selected="selected"{% endif %}>{{ lang.editnews['header.stext'] }}</option>
+					</select>
+                </div>
+				<div style="margin: 10px 0;">
+					<input name="an" id="an" type="text" class="form-control" placeholder="{{ lang.editnews.author }}" value="{{ an }}" autocomplete="off" >
+				</div>
+			</div>
+		</div>
 	</div>
-								<div style="margin: 10px 0;">
-									<select class="form-control" name="st">
-									<option value="0" {% if (selected == '0') %}selected="selected"'{% endif %}>{{ lang.editnews['header.stitle'] }}</option>
-									<option value="1" {% if (selected == '1') %}selected="selected"'{% endif %}>{{ lang.editnews['header.stext'] }}</option></select>
-  </div>
-								<div style="margin: 10px 0;">
-									<input name="an" id="an" type="text" class="form-control" placeholder="{{ lang.editnews.author }}" value="{{ an }}" autocomplete="off" >
-								</div>
-							</div>
-						</div>
-					</div>
 <!--/Block 1-->
 
-<!--Block 2--><div class="col-md-4">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div style="margin: 10px 0;">
-									<input id="dr1" name="dr1" value="{{ dr1 }}" type="text" class="form-control" placeholder="{{ lang.editnews['header.date_since'] }}">
-								</div>
-								<div style="margin: 10px 0;">
-									<input id="dr2" name="dr2" value="{{ dr2 }}" type="text" class="form-control" placeholder="{{ lang.editnews['header.date_till'] }}">
-								</div>
-								<div style="margin: 10px 0;">
-									{{ category_select }}
-								</div>
-							</div>
-						</div>
-					</div>
-      <div class="col-md-4">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div style="margin: 10px 0;">
-									<div class="input-group">
-										<span class="input-group-addon">
-											{{ lang.editnews['header.status'] }}
-										</span>
-										<select class="form-control" name="status">
-<option value="">{{ lang.editnews['smode_all'] }}</option>{{ statuslist }}</select>
-    </div>
-								</div>
-								<div style="margin: 10px 0;">
-									<div class="input-group">
-										<span class="input-group-addon">
-											{{ lang.editnews['sort'] }}
-										</span>
-										<select name="sort" class="form-control">
-											{{ sortlist }}
-										</select>
-									</div>
-								</div>
-								<div style="margin: 10px 0;">
-									<div class="input-group">
-										<span class="input-group-addon">
-											{{ lang.editnews['header.perpage'] }}
-										</span>
-										<input type="text" class="form-control" name="rpp" value="{{ rpp }}" >
-										<span class="input-group-btn">
-											<button type="submit" class="btn btn-success">GO</button>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
+<!--Block 2-->
+    <div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div style="margin: 10px 0;">
+					<input id="dr1" name="dr1" value="{{ dr1 }}" type="text" class="form-control" placeholder="{{ lang.editnews['header.date_since'] }}">
+				</div>
+				<div style="margin: 10px 0;">
+					<input id="dr2" name="dr2" value="{{ dr2 }}" type="text" class="form-control" placeholder="{{ lang.editnews['header.date_till'] }}">
+				</div>
+				<div style="margin: 10px 0;">
+					{{ category_select }}
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div style="margin: 10px 0;">
+					<div class="input-group">
+						<span class="input-group-addon">
+							{{ lang.editnews['header.status'] }}
+						</span>
+						<select class="form-control" name="status">
+                            <option value="">{{ lang.editnews['smode_all'] }}</option>
+							{{ statuslist }}
+						</select>
+                    </div>
+				</div>
+				<div style="margin: 10px 0;">
+					<div class="input-group">
+						<span class="input-group-addon">
+							{{ lang.editnews['sort'] }}
+						</span>
+						<select name="sort" class="form-control">
+							{{ sortlist }}
+						</select>
 					</div>
 				</div>
+				<div style="margin: 10px 0;">
+					<div class="input-group">
+						<span class="input-group-addon">
+							{{ lang.editnews['header.perpage'] }}
+						</span>
+						<input type="text" class="form-control" name="rpp" value="{{ rpp }}" >
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-success">GO</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </form>
 <!-- ????? ????? ?????????? -->
 
@@ -183,90 +182,84 @@ function filter_attach_DateEdit(id) {
 <input type="hidden" name="mod" value="news" />
 <input type="hidden" name="action" value="manage" />
 <div class="row">
-					<div class="col-md-12">
-						<div class="panel panel-default">
-							<table class="table">
-<tr align="left" class="contHead">
-<td width="40" nowrap>{{ lang.editnews['postid_short'] }}</td>
-<td width="60"  nowrap>{{ lang.editnews['date'] }}</td>
-<td width="48">&nbsp;</td>
-<td width="45%" >{{ lang.editnews['title'] }}</td>
-{% if (pluginIsActive('comments')) %}{% if flags.comments %}<td width="50" style=" text-align:right;"><i class="fa fa-comments-o" aria-hidden="true"></i></td>{% endif %}{% endif %}
-<td width="50" style=" text-align:right;"><i class="fa fa-eye" aria-hidden="true"></i></td>
-<td width="25%">{{ lang.editnews['category'] }}</td>
-<td width="10%">{{ lang.editnews['author'] }}</td>
-<td width="16">{{ lang.editnews['status'] }}</td>
-<td width="1%"><input class="check" type="checkbox" name="master_box" title="{{ lang.editnews['select_all'] }}" onclick="javascript:check_uncheck_all(editnews)" /></td>
-</tr>
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<table class="table">
+                <tr align="left" >
+                    <td width="40" nowrap>{{ lang.editnews['postid_short'] }}</td>
+                    <td width="60"  nowrap>{{ lang.editnews['date'] }}</td>
+                    <td width="48">&nbsp;</td>
+                    <td width="45%" >{{ lang.editnews['title'] }}</td>
+{% if (pluginIsActive('comments')) %}{% if flags.comments %}
+                    <td width="50" style=" text-align:right;"><i class="fa fa-comments-o" aria-hidden="true"></i></td>{% endif %}{% endif %}
+                    <td width="50" style=" text-align:right;"><i class="fa fa-eye" aria-hidden="true"></i></td>
+                    <td width="25%">{{ lang.editnews['category'] }}</td>
+                    <td width="10%">{{ lang.editnews['author'] }}</td>
+                    <td width="16">{{ lang.editnews['status'] }}</td>
+                    <td width="1%"><input class="check" type="checkbox" name="master_box" title="{{ lang.editnews['select_all'] }}" onclick="javascript:check_uncheck_all(editnews)" /></td>
+                </tr>
 {% for entry in entries %}
-<tr align="left" >
-	<td width="30" class="contentEntry1">{{ entry.newsid }}</td>
-	<td width="60" class="contentEntry1">{{ entry.itemdate }}</td>
-	<td width="48" class="contentEntry1" cellspacing=0 cellpadding=0 style="padding:0; margin:0;" nowrap>
-		{% if entry.flags.mainpage %}<i class="fa fa-home" aria-hidden="true" title="{{ lang['on_main'] }}"></i>  {% endif %}
-		{% if (entry.attach_count > 0) %}<i class="fa fa-paperclip" aria-hidden="true" title="{{ lang['attach.count'] }}: {{ entry.attach_count }}"></i>  {% endif %}
-		{% if (entry.images_count > 0) %}<i class="fa fa-file-image-o" aria-hidden="true" title="{{ lang['images.count'] }}: {{ entry.images_count }}"></i>{% endif %}
-	</td>
-	<td width="45%" class="contentEntry1">
-		{% if entry.flags.editable %}<a href="{{ php_self }}?mod=news&amp;action=edit&amp;id={{ entry.newsid }}">{% endif %}{{ entry.title }}{% if entry.flags.editable %}</a>{% endif %}
-	</td>
-  {% if (pluginIsActive('comments')) %}{% if entry.flags.comments %}<td class="contentEntry1" style=" text-align:right;">{% if (entry.comments > 0) %}{{ entry.comments }}{% endif %}</td>{% endif %}{% endif %}
-	<td class="contentEntry1" style=" text-align:right;">{% if entry.flags.isActive %}<a href="{{ entry.link }}" target="_blank">{% endif %}{% if (entry.views > 0) %}{{ entry.views }}{% else %}-{% endif %}{% if entry.flags.isActive %}</a>{% endif %}</td>
-	<td class="contentEntry1">{{ entry.allcats }}</td>
-	<td class="contentEntry1"><a href="{{ php_self }}?mod=users&amp;action=editForm&amp;id={{ entry.userid }}">{{ entry.username }}</a></td>
-<<<<<<< HEAD
-	<td class="contentEntry1">{% if (entry.state == 1) %}<i class="fa fa-check" aria-hidden="true" title="{{ lang['state.published'] }}"></i> {% elseif (entry.state == 0) %}<i class="fa fa-times" aria-hidden="true" title="{{ lang['state.unpiblished'] }}"></i>{% else %}<i class="fa fa-circle-o" aria-hidden="true" title="{{ lang['state.draft'] }}"></i>{% endif %} </td>
-=======
-	<td class="contentEntry1">{% if (entry.state == 1) %}<i class="fa fa-check" aria-hidden="true" title="{{ lang['state.published'] }}"></i> {% elseif (entry.state == 0) %}<i class="fa fa-times" aria-hidden="true" title="{{ lang['state.unpiblished'] }}"></i>{% else %}<i class="fa fa-circle-o" aria-hidden="true" title="{{ lang['state.draft'] }}"></i>>{% endif %} </td>
->>>>>>> refs/remotes/origin/master
-	<td class="contentEntry1"><input name="selected_news[]" value="{{ entry.newsid }}" class="check" type="checkbox" /></td>
-</tr>
+                <tr align="left" >
+	                <td width="30">{{ entry.newsid }}</td>
+	                <td width="60">{{ entry.itemdate }}</td>
+	                <td width="48" cellspacing=0 cellpadding=0 style="padding:0; margin:0;" nowrap>
+{% if entry.flags.mainpage %}<i class="fa fa-home" aria-hidden="true" title="{{ lang['on_main'] }}"></i>  {% endif %}
+{% if (entry.attach_count > 0) %}<i class="fa fa-paperclip" aria-hidden="true" title="{{ lang['attach.count'] }}: {{ entry.attach_count }}"></i>  {% endif %}
+{% if (entry.images_count > 0) %}<i class="fa fa-file-image-o" aria-hidden="true" title="{{ lang['images.count'] }}: {{ entry.images_count }}"></i>{% endif %}</td>
+	                <td width="45%">{% if entry.flags.editable %}<a href="{{ php_self }}?mod=news&amp;action=edit&amp;id={{ entry.newsid }}">{% endif %}{{ entry.title }}{% if entry.flags.editable %}</a>{% endif %}</td>
+{% if (pluginIsActive('comments')) %}{% if entry.flags.comments %}
+                    <td style=" text-align:right;">{% if (entry.comments > 0) %}{{ entry.comments }}{% endif %}</td>{% endif %}{% endif %}
+	                <td style=" text-align:right;">{% if entry.flags.isActive %}<a href="{{ entry.link }}" target="_blank">{% endif %}{% if (entry.views > 0) %}{{ entry.views }}{% else %}-{% endif %}{% if entry.flags.isActive %}</a>{% endif %}</td>
+	                <td>{{ entry.allcats }}</td>
+	                <td><a href="{{ php_self }}?mod=users&amp;action=editForm&amp;id={{ entry.userid }}">{{ entry.username }}</a></td>
+	                <td>{% if (entry.state == 1) %}<i class="fa fa-check" aria-hidden="true" title="{{ lang['state.published'] }}"></i> {% elseif (entry.state == 0) %}<i class="fa fa-times" aria-hidden="true" title="{{ lang['state.unpiblished'] }}"></i>{% else %}<i class="fa fa-circle-o" aria-hidden="true" title="{{ lang['state.draft'] }}"></i>{% endif %} </td>
+	                <td><input name="selected_news[]" value="{{ entry.newsid }}" class="check" type="checkbox" /></td>
+                </tr>
 {% else %}
-<tr><td colspan="6"><p>- {{ lang.editnews['not_found'] }} -</p></td></tr>
+                <tr>
+				    <td colspan="6"><p>- {{ lang.editnews['not_found'] }} -</p></td>
+				</tr>
 {% endfor %}
-</table>
+            </table>
+        </div>
+	</div>
 </div>
-					</div>
-				</div>
 <div class="row">
-					<div class="col-md-7"></div>
+	<div class="col-md-7"></div>
 {% if flags.allow_modify %}
-
-
-					<div class="col-md-5">
-						<div style="margin: 20px 0;">
-							<div class="input-group">
-								<span class="input-group-addon">
-									{{ lang.editnews['action'] }}
-								</span>
-								<select class="form-control" name="subaction">
-								<option value="">-- {{ lang.editnews['action'] }} --</option>
-<option value="mass_approve">{{ lang.editnews['approve'] }}</option>
-<option value="mass_forbidden">{{ lang.editnews['forbidden'] }}</option>
-<option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
-<option value="mass_mainpage">{{ lang.editnews['massmainpage'] }}</option>
-<option value="mass_unmainpage">{{ lang.editnews['massunmainpage'] }}</option>
-<option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
-<option value="mass_currdate">{{ lang.editnews['modify.mass.currdate'] }}</option>
-<option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
-{% if flags.comments %}<option value="mass_com_approve">{{ lang.editnews['com_approve'] }}</option>
-<option value="mass_com_forbidden">{{ lang.editnews['com_forbidden'] }}</option>
-<option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>{% endif %}
-<option value="mass_delete">{{ lang.editnews['delete'] }}</option>
-
-</select>
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-success">{{ lang.editnews['submit'] }}</button>
-								</span>
-							</div>
-						</div>
-					</div>
-				
-				{% endif %}
-				
+    <div class="col-md-5">
+		<div style="margin: 20px 0;">
+			<div class="input-group">
+				<span class="input-group-addon">
+					{{ lang.editnews['action'] }}
+				</span>
+				<select class="form-control" name="subaction">
+					<option value="">-- {{ lang.editnews['action'] }} --</option>
+                    <option value="mass_approve">{{ lang.editnews['approve'] }}</option>
+                    <option value="mass_forbidden">{{ lang.editnews['forbidden'] }}</option>
+                    <option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
+                    <option value="mass_mainpage">{{ lang.editnews['massmainpage'] }}</option>
+                    <option value="mass_unmainpage">{{ lang.editnews['massunmainpage'] }}</option>
+                    <option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
+                    <option value="mass_currdate">{{ lang.editnews['modify.mass.currdate'] }}</option>
+                    <option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
+{% if flags.comments %}
+                    <option value="mass_com_approve">{{ lang.editnews['com_approve'] }}</option>
+                    <option value="mass_com_forbidden">{{ lang.editnews['com_forbidden'] }}</option>
+                    <option value="" style="background-color: #E0E0E0;" disabled="disabled">===================</option>
+{% endif %}
+                    <option value="mass_delete">{{ lang.editnews['delete'] }}</option>
+				</select>
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-success">{{ lang.editnews['submit'] }}</button>
+				</span>
+			</div>
+		</div>
+	</div>
+{% endif %}
 </div>
 <div class="row">
-<div class="col-md-12">{{ pagesss }}</div>
+    <div class="col-md-12">{{ pagesss }}</div>
 </div>
 </form>
 
