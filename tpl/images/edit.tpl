@@ -9,15 +9,18 @@ function markNameEdit() {
 <!-- breadcrumb -->
 <div class="row breadcrumb">
 	<ol class="breadcrumb-entry">
-		<li><a href="admin.php">{{ lang['home'] }}</a></li>
+		<li><a href="admin.php">{l_home}</a></li>
 		<li><a href="?mod=images">{l_images_title}</a> </li>
 		<li class="active"> {l_edit_title} "{orig_name}"</li>
 	</ol>
 </div>
 <!-- /breadcrumb -->
-<br/>
-    <a href="{link_back}"><strong>{l_back_to_list}</strong></a>
-<br/>
+<div class="row">
+    <div class="col-md-12">	
+        <div class="panel panel-default">
+
+    
+
 <form method="post" action="admin.php">
 <input type="hidden" name="mod" value="images"/>
 <input type="hidden" name="subaction" value="editApply"/>
@@ -104,7 +107,10 @@ function markNameEdit() {
 		<td><textarea name="description" cols="80" rows="2">{description}</textarea></td>
     </tr>
     <tr>
-	    <td colspan="2"><input type="submit" style="width: 300px;" value="{l_save}" class="button"/></td>
+	    <td colspan="2"><input type="submit" style="width: 300px;" value="{l_save}" class="button"/> <a href="{link_back}"><strong>{l_back_to_list}</strong></a></td>
 	</tr>
 </table>
 </form>
+</div></div></div>
+
+
