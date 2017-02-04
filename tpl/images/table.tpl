@@ -56,11 +56,7 @@ function setStatus(mode) {
 			<div class="panel-footer" id="list">
 				<div style="margin: 10px 0;">
 					<div class="input-group">
-                        <span class="input-group-addon">
-						    {l_show_preview} 
-							<input type="checkbox" onclick="setCookie('img_preview',this.checked?1:0); document.location=document.location;" {box_preview}/>
-						</span>
-                        <span class="input-group-addon">{l_per_page}</span> 
+                         <span class="input-group-addon">{l_per_page}</span> 
 						    <input class="form-control" name="npp" value="{npp}" type="text" size="3" />
 						<span class="input-group-btn">
 						    <button type="submit" class="btn btn-success">{l_show}</button>
@@ -96,32 +92,17 @@ function setStatus(mode) {
 <form action="{php_self}?mod=images" method="post" name="imagedelete" id="delform">
 <input type="hidden" name="subaction" value="" />
 <input type="hidden" name="area" value="{area}" />
-            <div id="entries" class="table-responsive">
-                <table class="table table-hover ">
-                     <thead>
-					    <tr>
-                           <th colspan="3">{l_header.insert}</th>
-                           [preview]
-						   <th>{l_show_preview}</th>
-						   [/preview]
-                            <th>{l_name}</th>
-                            <th colspan="2">{l_header.view}</th>
- <!-- <th>{l_action}</th> -->
-                            <th>{l_size}</th>
-                            <th>{l_category}</th>
-                            <th>{l_author}</th>
-                            <th colspan="2">{l_action}</th>
-                            <th><input class="check" type="checkbox" name="master_box" title="{l_select_all}" onclick="javascript:check_uncheck_all(imagedelete)" /></th>
-						</tr>
-                    </thead>
-					<tbody>
+            <div class="row" id="entries">
+                 <div class="col-md-12">
+				    <div class="panel-body">
+                        Выделить все изображения :  <input class="check" type="checkbox" name="master_box" title="{l_select_all}" onclick="javascript:check_uncheck_all(imagedelete)" />
+					</div>
+					<div class="panel-body">
                         {entries}
-                    <tr>
-                        <td colspan="12">{pagesss}</td>
-                    </tr>
-					</tbody>
-                </table>
-                <div class="row">
+					</div>
+				</div>	
+            </div>
+			<div class="row">
                     <div class="col-md-8">
 					    <div class="panel-body">
 							<div class="input-group">
@@ -138,13 +119,17 @@ function setStatus(mode) {
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="panel-body">
+						<div class="panel-body text-right">
 							[status]
 							    <button class="btn btn-success" type="submit" onclick="setStatus('delete');">{l_delete}</button>
 							[/status]
 						</div>
 					</div>
-				</div>
+				    <div class="col-md-12">
+					    <div class="panel-footer text-center">
+                        {pagesss}
+						</div>
+				    </div>
 			</div>
 </form>
 
