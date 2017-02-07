@@ -13,7 +13,7 @@
 							
 <form action="{{ php_self }}?mod=static" method="post" name="static">
 <input type="hidden" name="token" value="{{ token }}"/>
-        <table class="table table-hover">
+        <table class="table table-hover table-responsive ">
 			<thead>
 				<tr>
 					<th>{{ lang['state'] }}</th>
@@ -29,7 +29,7 @@
 {% for entry in entries %}
                 <tr>
 					<td>{% if (entry.url) %}<i class="fa fa-check" aria-hidden="true" title="опубликовано" style="color: #3fc636;"></i>{% else %}<i class="fa fa-times" aria-hidden="true" title="Не опубликовано" style="color: #f11a16;"></i>{% endif %}</td>
-				    <td>% if (perm.details) %}<a title="ID: {{ entry.id }}" href="{{ php_self }}?mod=static&amp;action=editForm&amp;id={{ entry.id }}">{% endif %}{{ entry.title }}{% if (perm.details) %}</a>{% endif %}<br/><small>{{ entry.url }}</small>&nbsp;
+				    <td>{% if (perm.details) %}<a title="ID: {{ entry.id }}" href="{{ php_self }}?mod=static&amp;action=editForm&amp;id={{ entry.id }}">{% endif %}{{ entry.title }}{% if (perm.details) %}</a>{% endif %}<br/><small>{{ entry.url }}</small>&nbsp;
 </td>
 					<td >{{ entry.date }}</td>
 					<td>{{ entry.alt_name }}</td>
@@ -86,6 +86,4 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-    <div class="col-md-12">{{ pagesss }}</div>
-</div>
+
