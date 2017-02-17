@@ -102,13 +102,13 @@ function ngCheckEmail() {
 
 </script>
 <!-- breadcrumb -->
-				<div class="row breadcrumb">
-					<ol class="breadcrumb-entry">
-						<li><a href="admin.php">{{ lang['home'] }}</a></li>
-						<li class="active"><a href="?mod=configuration">{{ lang['configuration_title'] }}</a></li>
-					</ol>
-				</div>
-				<!-- /breadcrumb -->
+<div class="row breadcrumb">
+	<ol class="breadcrumb-entry">
+		<li><a href="admin.php">{{ lang['home'] }}</a></li>
+		<li class="active"><a href="?mod=configuration">{{ lang['configuration_title'] }}</a></li>
+	</ol>
+</div>
+<!-- /breadcrumb -->
 		
 <form method="post" action="{{ php_self }}">
 <input type="hidden" name="mod" value="configuration" />
@@ -117,119 +117,119 @@ function ngCheckEmail() {
 
 
 <div class="row">
-<div class="col-md-12">	
-<div class="panel panel-default">	
-<div class="panel-heading">
-<ul class="nav nav-pills nav-justified">
-  <li class="active"><a href="#tab1" data-toggle="tab"> {{ lang['db'] }}</a></li>
-  <li><a href="#tab2" data-toggle="tab">{{ lang['security'] }}</a></li>
-  <li><a href="#tab3" data-toggle="tab">{{ lang['syst'] }}</a></li>
-  <li><a href="#tab4" data-toggle="tab">{{ lang['sn'] }}</a></li>
-  <li><a href="#tab5" data-toggle="tab">{{ lang['users'] }}</a></li>
-  <li><a href="#tab6" data-toggle="tab">{{ lang['files'] }}/{{ lang['img'] }}</a></li>
-  <li><a href="#tab7" data-toggle="tab">{{ lang['auth'] }}</a></li>
-  <li><a href="#tab8" data-toggle="tab">{{ lang['cache'] }}</a></li>
-  <li><a href="#tab9" data-toggle="tab">{{ lang['multi'] }}</a></li>
-</ul>
-</div>
-<div class="tab-content">
+    <div class="col-md-12">	
+        <div class="panel panel-default">	
+            <div class="panel-heading">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="active"><a href="#tab1" data-toggle="tab"> {{ lang['db'] }}</a></li>
+                    <li><a href="#tab2" data-toggle="tab">{{ lang['security'] }}</a></li>
+                    <li><a href="#tab3" data-toggle="tab">{{ lang['syst'] }}</a></li>
+                    <li><a href="#tab4" data-toggle="tab">{{ lang['sn'] }}</a></li>
+                    <li><a href="#tab5" data-toggle="tab">{{ lang['users'] }}</a></li>
+                    <li><a href="#tab6" data-toggle="tab">{{ lang['files'] }}/{{ lang['img'] }}</a></li>
+                    <li><a href="#tab7" data-toggle="tab">{{ lang['auth'] }}</a></li>
+                    <li><a href="#tab8" data-toggle="tab">{{ lang['cache'] }}</a></li>
+                    <li><a href="#tab9" data-toggle="tab">{{ lang['multi'] }}</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
 
 <!-- TABLE DB//Connection -->
-<div class="tab-pane fade in active" id="tab1">
-<div class="panel-body">
-<table class="table">
-<tr>
- <td colspan="2" class="contentHead">{{ lang['db_connect'] }}</td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['dbhost'] }}<br><small>{{ lang['example'] }} localhost</small></td>
-<td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[dbhost]" value="{{ config['dbhost'] }}" id="db_dbhost" size="40" /></td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['dbname'] }}<br /><small>{{ lang['example'] }} ng</small></td>
-<td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[dbname]" value="{{ config['dbname'] }}" id="db_dbname" size="40" /></td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['dbuser'] }}<br /><small>{{ lang['example'] }} root</small></td>
-<td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[dbuser]" value="{{ config['dbuser'] }}" id="db_dbuser" size="40" /></td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['dbpass'] }}<br /><small>{{ lang['example'] }} password</small></td>
-<td width="50%"   valign="middle"><input class="form-control" type="password" name="save_con[dbpasswd]" value="{{ config['dbpasswd'] }}" id="db_dbpasswd" size="40" /></td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['dbprefix'] }}<br /><small>{{ lang['example'] }} ng</small></td>
-<td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[prefix]" value="{{ config['prefix'] }}" size="40" /></td>
-</tr>
-<tr>
-<td width="50%"  >&nbsp;</td>
-<td width="50%"  ><button type="button" class="btn btn-primary" onclick="ngCheckDB(); return false;">{{ lang['btn_checkDB'] }}</button></td>
-</tr>
-</table>
+                <div class="tab-pane fade in active" id="tab1">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td colspan="2">{{ lang['db_connect'] }}</td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['dbhost'] }}<br><small>{{ lang['example'] }} localhost</small></td>
+                                <td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[dbhost]" value="{{ config['dbhost'] }}" id="db_dbhost" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['dbname'] }}<br /><small>{{ lang['example'] }} ng</small></td>
+                                <td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[dbname]" value="{{ config['dbname'] }}" id="db_dbname" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['dbuser'] }}<br /><small>{{ lang['example'] }} root</small></td>
+                                <td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[dbuser]" value="{{ config['dbuser'] }}" id="db_dbuser" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['dbpass'] }}<br /><small>{{ lang['example'] }} password</small></td>
+                                <td width="50%"   valign="middle"><input class="form-control" type="password" name="save_con[dbpasswd]" value="{{ config['dbpasswd'] }}" id="db_dbpasswd" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['dbprefix'] }}<br /><small>{{ lang['example'] }} ng</small></td>
+                                <td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[prefix]" value="{{ config['prefix'] }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >&nbsp;</td>
+                                <td width="50%"  ><button type="button" class="btn btn-primary" onclick="ngCheckDB(); return false;">{{ lang['btn_checkDB'] }}</button></td>
+                            </tr>
+                        </table>
 <!-- END: TABLE DB//Connection -->
 <!-- TABLE DB//Backup -->
-<table class="table">
-<tr>
- <td colspan="2" class="contentHead">{{ lang['db_backup'] }}</td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['auto_backup'] }}<br /><small>{{ lang['auto_backup_desc'] }}</small></td>
-<td width="50%"   valign="middle">{{ mkSelectYN({ 'class' : 'form-control' , 'name' : 'save_con[auto_backup]', 'value' : config['auto_backup'] }) }}</td>
-</tr>
-<tr>
-<td width="50%"  >{{ lang['auto_backup_time'] }}<br /><small>{{ lang['auto_backup_time_desc'] }}</small></td>
-<td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[auto_backup_time]" value="{{ config['auto_backup_time'] }}" size="5" maxlength="5" /></td>
-</tr>
-</table>
+                        <table class="table">
+                            <tr>
+                                <td colspan="2" >{{ lang['db_backup'] }}</td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['auto_backup'] }}<br /><small>{{ lang['auto_backup_desc'] }}</small></td>
+                                <td width="50%"   valign="middle">{{ mkSelectYN({ 'class' : 'form-control' , 'name' : 'save_con[auto_backup]', 'value' : config['auto_backup'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td width="50%"  >{{ lang['auto_backup_time'] }}<br /><small>{{ lang['auto_backup_time_desc'] }}</small></td>
+                                <td width="50%"   valign="middle"><input class="form-control" type="text" name="save_con[auto_backup_time]" value="{{ config['auto_backup_time'] }}" size="5" maxlength="5" /></td>
+                            </tr>
+                        </table>
 <!-- END: TABLE DB//Backup -->
-</div>
-</div>
+                    </div>
+                </div>
 
 <!-- ########################## SECURITY TAB ########################## -->
-<div class="tab-pane fade" id="tab2">
-									<div class="panel-body">
-<table class="table">
-<tr>
- <td colspan="2" class="contentHead">{{ lang['logging'] }}</td>
-</tr>
-<tr>
-<td  >{{ lang['x_ng_headers'] }}<br /><small>{{ lang['x_ng_headers#desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectNY({'name' : 'save_con[x_ng_headers]', 'value' : config['x_ng_headers'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['syslog'] }}<br /><small>{{ lang['syslog_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[syslog]', 'value' : config['syslog'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['load'] }}<br /><small>{{ lang['load_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[load_analytics]', 'value' : config['load_analytics'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['load_profiler'] }}<br /><small>{{ lang['load_profiler_desc'] }}</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[load_profiler]" value="{{ config['load_profiler'] }}" /></td>
-</tr>
-<tr>
- <td colspan="2" class="contentHead">{{ lang['security'] }}</td>
-</tr>
-<tr>
-<td  >{{ lang['flood_time'] }}<br /><small>{{ lang['flood_time_desc'] }}</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[flood_time]" value="{{ config['flood_time'] }}" size="6" /></td>
-</tr>
-<tr>
-<td  >{{ lang['use_captcha'] }}<br /><small>{{ lang['use_captcha_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[use_captcha]', 'value' : config['use_captcha'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['captcha_font'] }}<br /><small>{{ lang['captcha_font_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[captcha_font]', 'value' : config['captcha_font'], 'values' : list['captcha_font'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['use_cookies'] }}<br /><small>{{ lang['use_cookies_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[use_cookies]', 'value' : config['use_cookies'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['use_sessions'] }}<br /><small>{{ lang['use_sessions_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[use_sessions]', 'value' : config['use_sessions'] }) }}</td>
+                <div class="tab-pane fade" id="tab2">
+					<div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td colspan="2">{{ lang['logging'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['x_ng_headers'] }}<br /><small>{{ lang['x_ng_headers#desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectNY({'name' : 'save_con[x_ng_headers]', 'value' : config['x_ng_headers'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['syslog'] }}<br /><small>{{ lang['syslog_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[syslog]', 'value' : config['syslog'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['load'] }}<br /><small>{{ lang['load_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[load_analytics]', 'value' : config['load_analytics'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['load_profiler'] }}<br /><small>{{ lang['load_profiler_desc'] }}</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[load_profiler]" value="{{ config['load_profiler'] }}" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">{{ lang['security'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['flood_time'] }}<br /><small>{{ lang['flood_time_desc'] }}</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[flood_time]" value="{{ config['flood_time'] }}" size="6" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['use_captcha'] }}<br /><small>{{ lang['use_captcha_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[use_captcha]', 'value' : config['use_captcha'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['captcha_font'] }}<br /><small>{{ lang['captcha_font_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelect({'name' : 'save_con[captcha_font]', 'value' : config['captcha_font'], 'values' : list['captcha_font'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['use_cookies'] }}<br /><small>{{ lang['use_cookies_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[use_cookies]', 'value' : config['use_cookies'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['use_sessions'] }}<br /><small>{{ lang['use_sessions_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[use_sessions]', 'value' : config['use_sessions'] }) }}</td>
 </tr>
 <tr>
 <td  >{{ lang['sql_error'] }}<br /><small>{{ lang['sql_error_desc'] }}</small></td>
