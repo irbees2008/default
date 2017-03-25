@@ -68,7 +68,7 @@ function _modal_close() {
 									</tr>
 								</tbody>
 							</table>
-							<script type="text/javascript" language="JavaScript" src="{{versionNotifyURL }}"></script>
+							<script>{{versionNotifyURL }}</script>
 						</div>
 					</div>
 				</div>

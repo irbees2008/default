@@ -230,166 +230,169 @@ function ngCheckEmail() {
                             <tr>
                                 <td>{{ lang['use_sessions'] }}<br /><small>{{ lang['use_sessions_desc'] }}</small></td>
                                 <td valign="middle">{{ mkSelectYN({'name' : 'save_con[use_sessions]', 'value' : config['use_sessions'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['sql_error'] }}<br /><small>{{ lang['sql_error_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[sql_error_show]', 'value' : config['sql_error_show'], 'values' : { 0 : lang['sql_error_0'], 1 : lang['sql_error_1'], 2 : lang['sql_error_2'] } }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['multiext_files'] }}<br /><small>{{ lang['multiext_files_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectNY({'name' : 'save_con[allow_multiext]', 'value' : config['allow_multiext'] }) }}</td>
-</tr>
-</table>
-<table class="table">
-<tr>
- <td colspan="2" class="contentHead">{{ lang['debug_generate'] }}</td>
-</tr>
-<tr>
-<td  >{{ lang['debug'] }}<br /><small>{{ lang['debug_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[debug]', 'value' : config['debug'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['debug_queries'] }}<br /><small>{{ lang['debug_queries_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[debug_queries]', 'value' : config['debug_queries'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['debug_profiler'] }}<br /><small>{{ lang['debug_profiler_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[debug_profiler]', 'value' : config['debug_profiler'] }) }}</td>
-</tr>
-</table>
-</div>
-</div>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['sql_error'] }}<br /><small>{{ lang['sql_error_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelect({'name' : 'save_con[sql_error_show]', 'value' : config['sql_error_show'], 'values' : { 0 : lang['sql_error_0'], 1 : lang['sql_error_1'], 2 : lang['sql_error_2'] } }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['multiext_files'] }}<br /><small>{{ lang['multiext_files_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectNY({'name' : 'save_con[allow_multiext]', 'value' : config['allow_multiext'] }) }}</td>
+                            </tr>
+                        </table>
+                        <table class="table">
+                            <tr>
+                                <td colspan="2">{{ lang['debug_generate'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['debug'] }}<br /><small>{{ lang['debug_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[debug]', 'value' : config['debug'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['debug_queries'] }}<br /><small>{{ lang['debug_queries_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[debug_queries]', 'value' : config['debug_queries'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['debug_profiler'] }}<br /><small>{{ lang['debug_profiler_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[debug_profiler]', 'value' : config['debug_profiler'] }) }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
 
 <!-- ########################## SYSTEM TAB ########################## -->
-<div class="tab-pane fade" id="tab3">
-									<div class="panel-body">
-<table class="table">
-<tr>
- <td colspan="2" class="contentHead">{{ lang['syst'] }}</td>
-</tr>
-<tr>
-<td  >{{ lang['home_url'] }}<br /><small>{{ lang['example'] }} http://server.com</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[home_url]" value="{{ config['home_url'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['admin_url'] }}<br /><small>{{ lang['example'] }} http://server.com/engine</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[admin_url]" value="{{ config['admin_url'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['home_title'] }}<br /><small>{{ lang['example'] }} NGcms</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[home_title]" value="{{ config['home_title']|escape }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['admin_mail'] }}<br /><small>{{ lang['example'] }} admin@server.com</small></td>
-<td   valign="middle"><input class="form-control email" type="text" name="save_con[admin_mail]" value="{{ config['admin_mail'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['lock'] }}<br /><small>{{ lang['lock_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectNY({'name' : 'save_con[lock]', 'value' : config['lock'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['lock_reason'] }}<br /><small>{{ lang['lock_reason_desc'] }}</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[lock_reason]" value="{{ config['lock_reason'] }}" size="40" maxlength="200" /></td>
-</tr>
-<tr>
-<td  >{{ lang['meta'] }}<br /><small>{{ lang['meta_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[meta]', 'value' : config['meta'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['description'] }}<br /><small>{{ lang['description_desc'] }}</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[description]" value="{{ config['description'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['keywords'] }}<br /><small>{{ lang['keywords_desc'] }}</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[keywords]" value="{{ config['keywords'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['theme'] }}<br /><small>{{ lang['theme_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[theme]', 'value' : config['theme'], 'values' : list['theme'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['lang'] }}<br /><small>{{ lang['lang_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[default_lang]', 'value' : config['default_lang'], 'values' : list['default_lang'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['use_gzip'] }}<br /><small>{{ lang['use_gzip_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[use_gzip]', 'value' : config['use_gzip'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['404_mode'] }}<br /><small>{{ lang['404_mode_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[404_mode]', 'value' : config['404_mode'], 'values' : { 0 : lang['404.int'], 1 : lang['404.ext'], 2 : lang['404.http'] } }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['libcompat'] }}<br /><small>{{ lang['libcompat_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectYN({'name' : 'save_con[libcompat]', 'value' : config['libcompat'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['url_external_nofollow'] }}<br /><small>{{ lang['url_external_nofollow_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectNY({'name' : 'save_con[url_external_nofollow]', 'value' : config['url_external_nofollow'] }) }}</td>
-</tr>
-<tr>
-<td  >{{ lang['url_external_target_blank'] }}<br /><small>{{ lang['url_external_target_blank_desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectNY({'name' : 'save_con[url_external_target_blank]', 'value' : config['url_external_target_blank'] }) }}</td>
-</tr>
-<tr>
-	<td  >{{ lang['timezone'] }}<br /><small>{{ lang['timezone#desc'] }}</small></td>
-	<td   valign="middle">
-	<select class="form-control" name="save_con[timezone]" id="timezone">
-{% for zone in list['timezoneList'] %}<option value="{{ zone }}" {% if (config['timezone'] == zone) %}selected="selected"{% endif %}>{{ zone }}</option>
+                <div class="tab-pane fade" id="tab3">
+					<div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td colspan="2">{{ lang['syst'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['home_url'] }}<br /><small>{{ lang['example'] }} http://server.com</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[home_url]" value="{{ config['home_url'] }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['admin_url'] }}<br /><small>{{ lang['example'] }} http://server.com/engine</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[admin_url]" value="{{ config['admin_url'] }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['home_title'] }}<br /><small>{{ lang['example'] }} NGcms</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[home_title]" value="{{ config['home_title']|escape }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['admin_mail'] }}<br /><small>{{ lang['example'] }} admin@server.com</small></td>
+                                <td valign="middle"><input class="form-control email" type="text" name="save_con[admin_mail]" value="{{ config['admin_mail'] }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['lock'] }}<br /><small>{{ lang['lock_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectNY({'name' : 'save_con[lock]', 'value' : config['lock'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['lock_reason'] }}<br /><small>{{ lang['lock_reason_desc'] }}</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[lock_reason]" value="{{ config['lock_reason'] }}" size="40" maxlength="200" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['meta'] }}<br /><small>{{ lang['meta_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[meta]', 'value' : config['meta'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['description'] }}<br /><small>{{ lang['description_desc'] }}</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[description]" value="{{ config['description'] }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['keywords'] }}<br /><small>{{ lang['keywords_desc'] }}</small></td>
+                                <td valign="middle"><input class="form-control" type="text" name="save_con[keywords]" value="{{ config['keywords'] }}" size="40" /></td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['theme'] }}<br /><small>{{ lang['theme_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelect({'name' : 'save_con[theme]', 'value' : config['theme'], 'values' : list['theme'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['lang'] }}<br /><small>{{ lang['lang_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelect({'name' : 'save_con[default_lang]', 'value' : config['default_lang'], 'values' : list['default_lang'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['use_gzip'] }}<br /><small>{{ lang['use_gzip_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[use_gzip]', 'value' : config['use_gzip'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['404_mode'] }}<br /><small>{{ lang['404_mode_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelect({'name' : 'save_con[404_mode]', 'value' : config['404_mode'], 'values' : { 0 : lang['404.int'], 1 : lang['404.ext'], 2 : lang['404.http'] } }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['libcompat'] }}<br /><small>{{ lang['libcompat_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectYN({'name' : 'save_con[libcompat]', 'value' : config['libcompat'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['url_external_nofollow'] }}<br /><small>{{ lang['url_external_nofollow_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectNY({'name' : 'save_con[url_external_nofollow]', 'value' : config['url_external_nofollow'] }) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ lang['url_external_target_blank'] }}<br /><small>{{ lang['url_external_target_blank_desc'] }}</small></td>
+                                <td valign="middle">{{ mkSelectNY({'name' : 'save_con[url_external_target_blank]', 'value' : config['url_external_target_blank'] }) }}</td>
+                            </tr>
+                            <tr>
+	                            <td>{{ lang['timezone'] }}<br /><small>{{ lang['timezone#desc'] }}</small></td>
+	                            <td valign="middle">
+	                                <select class="form-control" name="save_con[timezone]" id="timezone">
+{% for zone in list['timezoneList'] %}
+                                        <option value="{{ zone }}" {% if (config['timezone'] == zone) %}selected="selected"{% endif %}>
+										{{ zone }}
+										</option>
 {% endfor %}
-	</select>
-	</td>
-</tr>
-<tr>
- <td colspan="2" class="contentHead">{{ lang['email_configuration'] }}</td>
-</tr>
-<tr>
-<td  >{{ lang['mailfrom_name'] }}<br /><small>{{ lang['example'] }} Administrator</small></td>
-<td   valign="middle"><input class="form-control" type="text" id="mail_fromname" name="save_con[mailfrom_name]" value="{{ config['mailfrom_name'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['mailfrom'] }}<br /><small>{{ lang['example'] }} mailbot@server.com</small></td>
-<td   valign="middle"><input class="form-control" type="text" id="mail_frommail" name="save_con[mailfrom]" value="{{ config['mailfrom'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  >{{ lang['mail_mode'] }}:<br /><small>{{ lang['mail_mode#desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[mail_mode]', 'id' : 'mail_mode', 'value' : config['mail_mode'], 'values' : { 'mail' : 'mail', 'sendmail' : 'sendmail', 'smtp' : 'smtp' } }) }}</td>
-</tr>
-<tr class="useSMTP">
- <td colspan="2" class="contentHead">{{ lang['smtp_config'] }}</td>
-</tr>
-<tr class="useSMTP">
-<td  >{{ lang['smtp_host'] }}:<br /><small>{{ lang['example'] }} smtp.mail.ru</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[mail][smtp][host]" id="mail_smtp_host" value="{{ config['mail']['smtp']['host'] }}" size="40" /></td>
-</tr>
-<tr class="useSMTP">
-<td  >{{ lang['smtp_port'] }}:<br /><small>{{ lang['example'] }} 25</small></td>
-<td   valign="middle"><input cclass="form-control" type="text" name="save_con[mail][smtp][port]" id="mail_smtp_port" size="40" value="{{ config['mail']['smtp']['port'] }}" /></td>
-</tr>
-<tr class="useSMTP">
-<td  >{{ lang['smtp_auth'] }}:<br /><small>{{ lang['smtp_auth#desc'] }}</small></td>
-<td   valign="middle">{{ mkSelectNY({'name' : 'save_con[mail][smtp][auth]', 'id' : 'mail_smtp_auth', 'value' : config['mail']['smtp']['auth'] }) }}</td>
-</tr>
-<tr class="useSMTP">
-<td  >{{ lang['smtp_secure'] }}:<br /><small>{{ lang['smtp_secure#desc'] }}</small></td>
-<td   valign="middle">{{ mkSelect({'name' : 'save_con[mail][smtp][secure]', 'id' : 'mail_smtp_secure', 'value' : config['mail']['smtp']['secure'], 'values' : { '' : 'None', 'tls' : 'TLS', 'ssl' : 'SSL' } }) }}</td>
-</tr>
-<tr class="useSMTP">
-<td  >{{ lang['smtp_auth_login'] }}:<br /><small>{{ lang['example'] }} email@mail.ru</small></td>
-<td   valign="middle"><input class="form-control" type="text" id="mail_smtp_login" name="save_con[mail][smtp][login]" value="{{ config['mail']['smtp']['login'] }}" size="40" /></td>
-</tr>
-<tr class="useSMTP">
-<td  >{{ lang['smtp_auth_pass'] }}:<br /><small>{{ lang['example'] }} mySuperPassword</small></td>
-<td   valign="middle"><input class="form-control" type="text" name="save_con[mail][smtp][pass]" id="mail_smtp_pass" value="{{ config['mail']['smtp']['pass'] }}" size="40" /></td>
-</tr>
-<tr>
-<td  ><button type="button" class="btn btn-primary" onclick="ngCheckEmail(); return false;">{{ lang['btn_checkSMTP'] }}</button></td>
-<td   valign="middle" style="display: block;">EMail: <input class="form-control" id="mail_tomail" type="text" name="" value="" size="30" /></td>
-</tr>
+	                                </select>
+	                            </td>
+                            </tr>
+                        <tr>
+                            <td colspan="2" class="contentHead">{{ lang['email_configuration'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ lang['mailfrom_name'] }}<br /><small>{{ lang['example'] }} Administrator</small></td>
+                            <td valign="middle"><input class="form-control" type="text" id="mail_fromname" name="save_con[mailfrom_name]" value="{{ config['mailfrom_name'] }}" size="40" /></td>
+                        </tr>
+                        <tr>
+                            <td>{{ lang['mailfrom'] }}<br /><small>{{ lang['example'] }} mailbot@server.com</small></td>
+                            <td valign="middle"><input class="form-control" type="text" id="mail_frommail" name="save_con[mailfrom]" value="{{ config['mailfrom'] }}" size="40" /></td>
+                        </tr>
+                        <tr>
+                            <td>{{ lang['mail_mode'] }}:<br /><small>{{ lang['mail_mode#desc'] }}</small></td>
+                            <td valign="middle">{{ mkSelect({'name' : 'save_con[mail_mode]', 'id' : 'mail_mode', 'value' : config['mail_mode'], 'values' : { 'mail' : 'mail', 'sendmail' : 'sendmail', 'smtp' : 'smtp' } }) }}</td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td colspan="2" class="contentHead">{{ lang['smtp_config'] }}</td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td>{{ lang['smtp_host'] }}:<br /><small>{{ lang['example'] }} smtp.mail.ru</small></td>
+                            <td valign="middle"><input class="form-control" type="text" name="save_con[mail][smtp][host]" id="mail_smtp_host" value="{{ config['mail']['smtp']['host'] }}" size="40" /></td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td>{{ lang['smtp_port'] }}:<br /><small>{{ lang['example'] }} 25</small></td>
+                            <td valign="middle"><input cclass="form-control" type="text" name="save_con[mail][smtp][port]" id="mail_smtp_port" size="40" value="{{ config['mail']['smtp']['port'] }}" /></td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td>{{ lang['smtp_auth'] }}:<br /><small>{{ lang['smtp_auth#desc'] }}</small></td>
+                            <td valign="middle">{{ mkSelectNY({'name' : 'save_con[mail][smtp][auth]', 'id' : 'mail_smtp_auth', 'value' : config['mail']['smtp']['auth'] }) }}</td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td>{{ lang['smtp_secure'] }}:<br /><small>{{ lang['smtp_secure#desc'] }}</small></td>
+                            <td valign="middle">{{ mkSelect({'name' : 'save_con[mail][smtp][secure]', 'id' : 'mail_smtp_secure', 'value' : config['mail']['smtp']['secure'], 'values' : { '' : 'None', 'tls' : 'TLS', 'ssl' : 'SSL' } }) }}</td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td>{{ lang['smtp_auth_login'] }}:<br /><small>{{ lang['example'] }} email@mail.ru</small></td>
+                            <td valign="middle"><input class="form-control" type="text" id="mail_smtp_login" name="save_con[mail][smtp][login]" value="{{ config['mail']['smtp']['login'] }}" size="40" /></td>
+                        </tr>
+                        <tr class="useSMTP">
+                            <td>{{ lang['smtp_auth_pass'] }}:<br /><small>{{ lang['example'] }} mySuperPassword</small></td>
+                            <td valign="middle"><input class="form-control" type="text" name="save_con[mail][smtp][pass]" id="mail_smtp_pass" value="{{ config['mail']['smtp']['pass'] }}" size="40" /></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="btn btn-primary" onclick="ngCheckEmail(); return false;">{{ lang['btn_checkSMTP'] }}</button></td>
+                            <td valign="middle" style="display: block;">EMail: <input class="form-control" id="mail_tomail" type="text" name="" value="" size="30" /></td>
+                        </tr>
 
-</table>
-</div>
-</div>
+                    </table>
+                </div>
+            </div>
 
 <!-- ########################## NEWS TAB ########################## -->
 <div class="tab-pane fade" id="tab4">
